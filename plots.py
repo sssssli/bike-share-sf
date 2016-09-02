@@ -21,7 +21,11 @@ def open_connection_sqlite ():
 
 conn_sqlite, curs_sqlite = open_connection_sqlite()
 
+#gets pandas dataframes from sqlite 
 df_station = pd.read_sql_query("SELECT * from station", conn_sqlite)
 df_status = pd.read_sql_query("SELECT * from status", conn_sqlite)
 df_trip = pd.read_sql_query("SELECT * from trip", conn_sqlite)
 df_weather = pd.read_sql_query("SELECT * from weather", conn_sqlite)
+
+#making it into a list
+df_list = [df_station, df_status, df_trip, df_weather]
