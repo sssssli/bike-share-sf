@@ -20,3 +20,8 @@ def open_connection_sqlite ():
     return (conn_sqlite, curs_sqlite)
 
 conn_sqlite, curs_sqlite = open_connection_sqlite()
+
+df_station = pd.read_sql_query("SELECT * from station", conn_sqlite)
+df_status = pd.read_sql_query("SELECT * from status", conn_sqlite)
+df_trip = pd.read_sql_query("SELECT * from trip", conn_sqlite)
+df_weather = pd.read_sql_query("SELECT * from weather", conn_sqlite)
